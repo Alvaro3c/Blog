@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <h1>Nuevo post</h1>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <button class="btn btn-link" [routerLink]="['posts']">Posts</button>
+            </li>
+
+        </ul>
+
+    </div>
+</nav>
+
+
+
+
+
+
+
+
+<div class="container">
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label class="form-label">titulo</label>
+            <input type="text" class="form-control" formControlName="titulo">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">autor</label>
+            <input type="text" class="form-control" formControlName="autor">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">fecha</label>
+            <input type="date" class="form-control" formControlName="fecha">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">texto</label>
+            <textarea class="form-control" formControlName="texto" cols="30" rows="10"></textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">imagen</label>
+            <input type="text" class="form-control" formControlName="imagen">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">categoria</label>
+            <input type="text" class="form-control" formControlName="categoria">
+        </div>
+        <input type="submit" value="enviar" class="btn btn-block btn-info">
+        <button [routerLink]="['posts']">Posts</button>
+    </form>
+</div>

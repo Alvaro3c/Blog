@@ -1,0 +1,31 @@
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <h1>blog</h1>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <button class="btn btn-info " [routerLink]="['/blog/new']">Crear post</button>
+
+                </li>
+
+            </ul>
+            <div>
+                <select class="custom-select" (change)="onCategoryChange($event)" name="category">
+                    <option value="">Seleciona una categoria</option>
+                    <option *ngFor="let category of allCategories" [value]="category">{{category}}</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+    <section>
+
+        <article *ngFor="let post of posts">
+            <h1>{{post.titulo}}</h1>
+            <img src="{{post.imagen}}" alt="">
+            <p>{{post.texto}}</p>
+            <h3>{{post.autor}}</h3>
+            <h4>{{post.categoria}}</h4>
+            <h5>{{post.fecha}}</h5>
+        </article>
+    </section>
+</body>
